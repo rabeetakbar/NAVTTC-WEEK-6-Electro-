@@ -56,7 +56,7 @@ const Navbar = ({ cartItems }) => {
             </button>
           </Link>
 
-          <Link to="/signup">
+          <Link to="/signin">
             <button className="flex flex-col items-center">
               <FontAwesomeIcon icon={faUser} />
               <span className="text-xs">Your Account</span>

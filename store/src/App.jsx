@@ -14,6 +14,7 @@ import AboutUsPage from './components/Aboutus';
 import ContactUs from './components/Contactus';
 import CartPage from './components/CartPage';  
 import SignUp from './components/Signup';
+import SignIn from './components/Signin';
 import Checkout from './components/checkout';
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -74,6 +75,8 @@ function App() {
             } 
           />  
           <Route path="/signup" element={<SignUp />} />  
+          <Route path="/signin" element={<SignIn />} />  
+
         </Routes>
 
         <Footer />
