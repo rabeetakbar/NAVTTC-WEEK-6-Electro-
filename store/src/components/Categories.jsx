@@ -37,8 +37,7 @@ const Categories = () => {
               Accessories
             </Link>
           </div>
-          
-          {/* Additional boxes for visual appeal, can be replaced with more categories */}
+
           <div className="p-6 bg-gray-700 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
             <div className="text-xl font-semibold text-center text-gray-300">
               More Coming Soon...

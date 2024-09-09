@@ -1,6 +1,7 @@
 import React from 'react';
-import teamImage from '../assets/team.png'; // Example image import, replace with your actual image
-import missionImage from '../assets/mission.png'; // Example image import, replace with your actual image
+import teamImage from '../assets/team.png';
+import team1Image from '../assets/team1.png'; 
+import missionImage from '../assets/mission.png';
 
 const AboutUsPage = () => {
   return (
@@ -15,7 +16,7 @@ const AboutUsPage = () => {
             We are a leading company in the tech industry, dedicated to providing the best products and services to our customers. With a commitment to innovation and excellence, we strive to create value and make a difference in the lives of people around the world.
           </p>
           <div className="flex justify-center mt-8">
-            <img src={teamImage} alt="Our Team" className="rounded-lg shadow-lg w-full sm:w-3/4 lg:w-1/2"/>
+            <img src={team1Image} alt="Our Team" className="rounded-lg shadow-lg w-full sm:w-3/4 lg:w-1/2"/>
           </div>
         </section>
 

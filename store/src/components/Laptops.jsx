@@ -1,12 +1,12 @@
 import React from 'react';
 import ProductCard from './ProductCard';
-import images from './images'; // Ensure this maps imageKey to image paths
+import images from './images'; 
 
-const LaptopPage = () => {
+const LaptopPage = ({ addToCart }) => { 
   const laptops = [
     {
-      id: 1,
-      imageKey: "laptop",
+      id: 'laptop1',
+      imageKey: "laptop",  
       category: "Laptops",
       productName: "Laptop 1",
       price: 850.00,
@@ -14,7 +14,7 @@ const LaptopPage = () => {
       rating: 4,
     },
     {
-      id: 2,
+      id: 'laptop2',
       imageKey: "laptop2",
       category: "Laptops",
       productName: "Laptop 2",
@@ -22,8 +22,8 @@ const LaptopPage = () => {
       oldPrice: 1300.00,
       rating: 5,
     },
-    {
-      id: 3,
+        {
+      id: 'laptop3',
       imageKey: "laptop3",
       category: "Laptops",
       productName: "Laptop 3",
@@ -32,7 +32,7 @@ const LaptopPage = () => {
       rating: 3,
     },
     {
-      id: 4,
+      id:'laptop4' ,
       imageKey: "laptop2",
       category: "Laptops",
       productName: "Laptop 4",
@@ -41,7 +41,7 @@ const LaptopPage = () => {
       rating: 4,
     },
     {
-      id: 5,
+      id: 'laptop5',
       imageKey: "laptop",
       category: "Laptops",
       productName: "Laptop 5",
@@ -50,7 +50,7 @@ const LaptopPage = () => {
       rating: 5,
     },
     {
-      id: 6,
+      id: 'laptop6',
       imageKey: "laptop3",
       category: "Laptops",
       productName: "Laptop 6",
@@ -59,7 +59,7 @@ const LaptopPage = () => {
       rating: 4,
     },
     {
-      id: 7,
+      id: 'laptop7',
       imageKey: "laptop",
       category: "Laptops",
       productName: "Laptop 7",
@@ -68,7 +68,7 @@ const LaptopPage = () => {
       rating: 4,
     },
     {
-      id: 8,
+      id: 'laptop8',
       imageKey: "laptop2",
       category: "Laptops",
       productName: "Laptop 8",
@@ -76,6 +76,7 @@ const LaptopPage = () => {
       oldPrice: 1600.00,
       rating: 5,
     },
+  
   ];
 
   return (
@@ -85,12 +86,16 @@ const LaptopPage = () => {
         {laptops.map(laptop => (
           <ProductCard
             key={laptop.id}
-            imageKey={laptop.imageKey}
+            imageKey={laptop.imageKey} 
             category={laptop.category}
             productName={laptop.productName}
             price={laptop.price}
             oldPrice={laptop.oldPrice}
             rating={laptop.rating}
+            addToCart={() => addToCart({
+              ...laptop, 
+              imageSrc: images[laptop.imageKey] 
+            })}
           />
         ))}
       </div>

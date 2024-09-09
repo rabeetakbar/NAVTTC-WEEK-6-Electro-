@@ -4,11 +4,11 @@ import mobile from '../assets/mobile.png';
 import cam from '../assets/cam.png';
 
 const TopSelling = () => {
-  // Sample data for top-selling products
+
   const products = [
     {
       id: 1,
-      imageUrl: laptop, // No need for brackets here
+      imageUrl: laptop,   
       category: 'CATEGORY',
       productName: 'PRODUCT NAME GOES HERE',
       price: 980.00,
@@ -16,7 +16,7 @@ const TopSelling = () => {
     },
     {
       id: 2,
-      imageUrl: mobile, // No need for brackets here
+      imageUrl: mobile,   
       category: 'CATEGORY',
       productName: 'PRODUCT NAME GOES HERE',
       price: 980.00,
@@ -24,7 +24,7 @@ const TopSelling = () => {
     },
     {
       id: 3,
-      imageUrl: cam, // No need for brackets here
+      imageUrl: cam,
       category: 'CATEGORY',
       productName: 'PRODUCT NAME GOES HERE',
       price: 980.00,

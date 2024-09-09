@@ -1,11 +1,11 @@
 import React from 'react';
 import ProductCard from './ProductCard';
-import Images from './images'; // Assuming images is an object mapping imageKey to image paths
+import images from './images';  
 
-const SmartphonePage = () => {
+const SmartphonePage = ({ addToCart }) => { 
   const smartphones = [
     {
-      id: 1,
+      id: 'phone1',
       imageKey: "smartphone",
       category: "SmartPhones",
       productName: "SmartPhone 1",
@@ -14,7 +14,7 @@ const SmartphonePage = () => {
       rating: 4,
     },
     {
-      id: 2,
+      id: 'phone2',
       imageKey: "smartphone",
       category: "SmartPhones",
       productName: "SmartPhone 2",
@@ -23,7 +23,7 @@ const SmartphonePage = () => {
       rating: 5,
     },
     {
-      id: 3,
+      id: 'phone3',
       imageKey: "smartphone",
       category: "SmartPhones",
       productName: "SmartPhone 3",
@@ -32,7 +32,7 @@ const SmartphonePage = () => {
       rating: 4,
     },
     {
-      id: 4,
+      id: 'phone4',
       imageKey: "smartphone",
       category: "SmartPhones",
       productName: "SmartPhone 4",
@@ -41,7 +41,7 @@ const SmartphonePage = () => {
       rating: 5,
     },
     {
-      id: 5,
+      id: 'phone5',
       imageKey: "smartphone",
       category: "SmartPhones",
       productName: "SmartPhone 5",
@@ -50,7 +50,7 @@ const SmartphonePage = () => {
       rating: 3,
     },
     {
-      id: 6,
+      id: 'phone6',
       imageKey: "smartphone",
       category: "SmartPhones",
       productName: "SmartPhone 6",
@@ -59,7 +59,7 @@ const SmartphonePage = () => {
       rating: 4,
     },
     {
-      id: 7,
+      id: 'phone7',
       imageKey: "smartphone",
       category: "SmartPhones",
       productName: "SmartPhone 7",
@@ -68,7 +68,7 @@ const SmartphonePage = () => {
       rating: 5,
     },
     {
-      id: 8,
+      id: 'phone8',
       imageKey: "smartphone",
       category: "SmartPhones",
       productName: "SmartPhone 8",
@@ -94,6 +94,11 @@ const SmartphonePage = () => {
               price={smartphone.price}
               oldPrice={smartphone.oldPrice}
               rating={smartphone.rating}
+              addToCart={() => addToCart({
+                ...smartphone, 
+                imageSrc: images[smartphone.imageKey],  
+                quantity: 1  
+              })}
             />
           </div>
         ))}

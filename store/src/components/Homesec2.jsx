@@ -2,7 +2,7 @@ import React from 'react';
 import images from './images';
 import ProductCard from './ProductCard';
 import TopSelling from './TopSelling';
-
+import { Link } from 'react-router-dom';
 const Homesec2 = () => {
   return (
     <div className="flex flex-col items-center">
@@ -51,11 +51,11 @@ const Homesec2 = () => {
         <div className="flex flex-col md:flex-row justify-between items-center px-5 md:px-20 lg:px-40 py-10">
           <h4 className="font-bold text-xl md:text-2xl">TOP SELLING</h4>
           <div className="flex justify-center space-x-4 mt-4 md:mt-0">
-            <a href="#" className="hover-underline hover:text-red-600">Laptops</a>
-            <a href="#" className="hover-underline hover:text-red-600">SmartPhones</a>
-            <a href="#" className="hover-underline hover:text-red-600">Cameras</a>
-            <a href="#" className="hover-underline hover:text-red-600">Accessories</a>
-          </div>
+          <a href="#" className="hover-underline hover:text-red-600"><Link to="/laptops">Laptops</Link></a>
+            <a href="#" className="hover-underline hover:text-red-600"><Link to="/smartphones">Smart Phones</Link></a>
+            <a href="#" className="hover-underline hover:text-red-600"><Link to="/cameras">Cameras</Link></a>
+            <a href="#" className="hover-underline hover:text-red-600"><Link to="/accessories">Accessories</Link></a>
+            </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 w-full">

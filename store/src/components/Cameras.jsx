@@ -1,11 +1,11 @@
 import React from 'react';
 import ProductCard from './ProductCard';
-import Images from './images'; // Assuming images is an object mapping imageKey to image paths
+import images from './images';  
 
-const Cameras = () => {
+const Cameras = ({ addToCart }) => { 
   const cameras = [
     {
-      id: 1,
+      id: 'camera1',   
       imageKey: "camera",
       category: "Cameras",
       productName: "Camera 1",
@@ -14,7 +14,7 @@ const Cameras = () => {
       rating: 5,
     },
     {
-      id: 2,
+      id: 'camera2',   
       imageKey: "camera",
       category: "Cameras",
       productName: "Camera 2",
@@ -23,7 +23,7 @@ const Cameras = () => {
       rating: 4,
     },
     {
-      id: 3,
+      id: 'camera3',   
       imageKey: "camera",
       category: "Cameras",
       productName: "Camera 3",
@@ -32,7 +32,7 @@ const Cameras = () => {
       rating: 5,
     },
     {
-      id: 4,
+      id: 'camera4',   
       imageKey: "camera",
       category: "Cameras",
       productName: "Camera 4",
@@ -41,7 +41,7 @@ const Cameras = () => {
       rating: 4,
     },
     {
-      id: 5,
+      id: 'camera5',   
       imageKey: "camera",
       category: "Cameras",
       productName: "Camera 5",
@@ -50,7 +50,7 @@ const Cameras = () => {
       rating: 5,
     },
     {
-      id: 6,
+      id: 'camera6',   
       imageKey: "camera",
       category: "Cameras",
       productName: "Camera 6",
@@ -59,7 +59,7 @@ const Cameras = () => {
       rating: 4,
     },
     {
-      id: 7,
+      id: 'camera7',   
       imageKey: "camera",
       category: "Cameras",
       productName: "Camera 7",
@@ -68,7 +68,7 @@ const Cameras = () => {
       rating: 5,
     },
     {
-      id: 8,
+      id: 'camera8',   
       imageKey: "camera",
       category: "Cameras",
       productName: "Camera 8",
@@ -94,6 +94,11 @@ const Cameras = () => {
               price={camera.price}
               oldPrice={camera.oldPrice}
               rating={camera.rating}
+              addToCart={() => addToCart({
+                ...camera, 
+                imageSrc: images[camera.imageKey],  
+                quantity: 1  
+              })}
             />
           </div>
         ))}

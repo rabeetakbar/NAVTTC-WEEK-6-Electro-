@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import images from './images';
-import { Link } from 'react-router-dom'; // Use Link for routing
+import { Link } from 'react-router-dom'; 
 
 const Footer = () => {
   return (
@@ -40,8 +40,8 @@ const Footer = () => {
         <div className="footer-section service">
           <h4>Service</h4>
           <ul>
-            <li><a href="#" className="hover-underline hover:text-red-600">My Account</a></li>
-            <li><a href="#" className="hover-underline hover:text-red-600">View Cart</a></li>
+          <li><Link to="/signup" className="hover-underline hover:text-red-600">My Account</Link></li>
+          <li><Link to="/cart" className="hover-underline hover:text-red-600">View cart</Link></li>
             <li><a href="#" className="hover-underline hover:text-red-600">Wish List</a></li>
             <li><a href="#" className="hover-underline hover:text-red-600">Track My Order</a></li>
             <li><a href="#" className="hover-underline hover:text-red-600">Help</a></li>
@@ -49,7 +49,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2024 All rights reserved | This template is made by GPT ; )</p>
+        <p>&copy; 2024 All rights reserved | This template is made by Meee :) </p>
         <div className="payment-icons  items-center space-x-4">
           <img src={images.visa} alt="Visa" className="h-10" />
           <img src={images.paypal} alt="PayPal" className="h-10" />

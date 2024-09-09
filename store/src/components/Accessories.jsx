@@ -1,11 +1,11 @@
 import React from 'react';
 import ProductCard from './ProductCard';
-import Images from './images'; // Assuming images is an object mapping imageKey to image paths
+import images from './images';  
 
-const Accessories = () => {
+const Accessories = ({ addToCart }) => { 
   const accessories = [
     {
-      id: 1,
+      id: 'accessory1',  
       imageKey: "hp",
       category: "Accessories",
       productName: "Accessory 1",
@@ -14,7 +14,7 @@ const Accessories = () => {
       rating: 4,
     },
     {
-      id: 2,
+      id: 'accessory2',  
       imageKey: "headphone2",
       category: "Accessories",
       productName: "Accessory 2",
@@ -23,7 +23,7 @@ const Accessories = () => {
       rating: 3,
     },
     {
-      id: 3,
+      id: 'accessory3', 
       imageKey: "headphone2",
       category: "Accessories",
       productName: "Accessory 3",
@@ -32,7 +32,7 @@ const Accessories = () => {
       rating: 5,
     },
     {
-      id: 4,
+      id: 'accessory4', 
       imageKey: "hp",
       category: "Accessories",
       productName: "Accessory 4",
@@ -41,7 +41,7 @@ const Accessories = () => {
       rating: 4,
     },
     {
-      id: 5,
+      id: 'accessory5',  
       imageKey: "hp",
       category: "Accessories",
       productName: "Accessory 5",
@@ -50,7 +50,7 @@ const Accessories = () => {
       rating: 3,
     },
     {
-      id: 6,
+      id: 'accessory6',  
       imageKey: "headphone2",
       category: "Accessories",
       productName: "Accessory 6",
@@ -59,7 +59,7 @@ const Accessories = () => {
       rating: 4,
     },
     {
-      id: 7,
+      id: 'accessory7',  
       imageKey: "hp",
       category: "Accessories",
       productName: "Accessory 7",
@@ -68,7 +68,7 @@ const Accessories = () => {
       rating: 3,
     },
     {
-      id: 8,
+      id: 'accessory8',  
       imageKey: "headphone2",
       category: "Accessories",
       productName: "Accessory 8",
@@ -94,6 +94,11 @@ const Accessories = () => {
               price={accessory.price}
               oldPrice={accessory.oldPrice}
               rating={accessory.rating}
+              addToCart={() => addToCart({
+                ...accessory, 
+                imageSrc: images[accessory.imageKey], 
+                quantity: 1  
+              })}
             />
           </div>
         ))}
