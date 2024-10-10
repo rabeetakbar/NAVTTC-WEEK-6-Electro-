@@ -1,9 +1,62 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const ContactUs = () => {
+  const [rating, setRating] = useState(0); // State to track the selected rating
+  const [name, setName] = useState(''); // State for the name input
+  const [email, setEmail] = useState(''); // State for the email input
+  const [detailedReview, setDetailedReviews] = useState(''); // State for the review input
+
+  const handleRating = (rate) => {
+    setRating(rate);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent default form submission
+
+    // Prepare the review data to send
+    const reviewData = {
+      name,
+      email,
+      detailedreview: detailedReview,
+      rating,
+    };
+
+    try {
+      // Send a POST request to the API
+      const response = await fetch('http://localhost:8000/postreview', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(reviewData),
+      });
+
+      if (response.ok) {
+        const jsonResponse = await response.json();
+        console.log('Review submitted successfully:', jsonResponse);
+        
+        // Show alert to user
+        alert('Review submitted successfully!');
+        
+        // Optionally reset form fields
+        setName('');
+        setEmail('');
+        setDetailedReviews('');
+        setRating(0);
+        
+        // Refresh page or you can navigate to another page if needed
+        // window.location.reload(); // Uncomment this line to refresh the page
+      } else {
+        console.error('Failed to submit review:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error submitting review:', error);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-100 text-gray-800 p-8">
       <div className="max-w-4xl mx-auto">
@@ -35,8 +88,8 @@ const ContactUs = () => {
         {/* Contact Form Section */}
         <section className="mb-16">
           <div className="p-6 bg-white rounded-lg shadow-md">
-            <h2 className="text-2xl font-semibold mb-6 text-center">Send Us a Message</h2>
-            <form>
+            <h2 className="text-2xl font-semibold mb-6 text-center">Send Us a Review</h2>
+            <form onSubmit={handleSubmit}>
               <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
                   Name
@@ -46,6 +99,8 @@ const ContactUs = () => {
                   id="name"
                   placeholder="Your Name"
                   className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)} // Update name state
                 />
               </div>
 
@@ -58,6 +113,8 @@ const ContactUs = () => {
                   id="email"
                   placeholder="Your Email"
                   className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)} // Update email state
                 />
               </div>
 
@@ -70,7 +127,27 @@ const ContactUs = () => {
                   placeholder="Your Message"
                   rows="5"
                   className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                  value={detailedReview}
+                  onChange={(e) => setDetailedReviews(e.target.value)} // Update review state
                 ></textarea>
+              </div>
+
+              {/* Star Rating Section */}
+              <div className="mb-4 text-center">
+                <label className="block text-gray-700 text-sm font-bold mb-2">Rate Us</label>
+                <div className="flex justify-center space-x-2">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <span
+                      key={star}
+                      className={`cursor-pointer text-2xl ${star <= rating ? 'text-yellow-500' : 'text-gray-400'}`}
+                      onClick={() => handleRating(star)}
+                      onMouseEnter={() => setRating(star)}
+                      onMouseLeave={() => setRating(star === rating ? star : 0)} // Show star only if not selected
+                    >
+                      ★
+                    </span>
+                  ))}
+                </div>
               </div>
 
               <div className="text-center">

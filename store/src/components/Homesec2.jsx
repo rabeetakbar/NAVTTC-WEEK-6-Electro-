@@ -51,54 +51,61 @@ const Homesec2 = () => {
         <div className="flex flex-col md:flex-row justify-between items-center px-5 md:px-20 lg:px-40 py-10">
           <h4 className="font-bold text-xl md:text-2xl">TOP SELLING</h4>
           <div className="flex justify-center space-x-4 mt-4 md:mt-0">
-          <a href="#" className="hover-underline hover:text-red-600"><Link to="/laptops">Laptops</Link></a>
-            <a href="#" className="hover-underline hover:text-red-600"><Link to="/smartphones">Smart Phones</Link></a>
-            <a href="#" className="hover-underline hover:text-red-600"><Link to="/cameras">Cameras</Link></a>
-            <a href="#" className="hover-underline hover:text-red-600"><Link to="/accessories">Accessories</Link></a>
+          <a href="#" className="hover-underline hover:text-red-600"><Link to="/products/laptops">Laptops</Link></a>
+            <a href="#" className="hover-underline hover:text-red-600"><Link to="/products/smartphones">Smart Phones</Link></a>
+            <a href="#" className="hover-underline hover:text-red-600"><Link to="/products/cameras">Cameras</Link></a>
+            <a href="#" className="hover-underline hover:text-red-600"><Link to="/products/accessories">Accessories</Link></a>
             </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 w-full">
+        <Link to="/products/smartphones">
           <ProductCard
             imageKey="mobile"
-            category="Category"
-            productName="PRODUCT NAME GOES HERE"
+            category="SmartPhones"
+            productName="Samsung S7 edge"
             price="980.00"
             oldPrice="990.00"
             rating={5}
-          />
+          /></Link>
+         <Link to="/products/laptops">
           <ProductCard
             imageKey="laptop"
-            category="CATEGORY"
-            productName="PRODUCT NAME GOES HERE"
+            category="Laptop"
+            productName="Dell Inspiron 5530"
             price="980.00"
             oldPrice="990.00"
             rating={5}
-          />
+          /></Link>
+         <Link to="/products/cameras">
           <ProductCard
             imageKey="cam"
-            category="CATEGORY"
-            productName="PRODUCT NAME GOES HERE"
+            category="Camera"
+            productName="Sony Pocket Cam"
             price="980.00"
             oldPrice="990.00"
             rating={5}
-          />
+          /></Link>
+         <Link to="/products/laptops">
           <ProductCard
             imageKey="laptop3"
-            category="CATEGORY"
-            productName="PRODUCT NAME GOES HERE"
+            category="Laptop"
+            productName="Hp Folio G3"
             price="980.00"
             oldPrice="990.00"
             rating={5}
-          />
+          /></Link>
         </div>
       </div>
 
       {/* Additional Top Selling Products */}
       <div className="flex flex-col lg:flex-row justify-center gap-10 w-full max-w-screen-lg">
-        <TopSelling />
-        <TopSelling />
-        <TopSelling />
+      <Link to="/categories">
+      <TopSelling /></Link>
+      <Link to="/categories">
+      <TopSelling /></Link>
+      <Link to="/categories">
+      <TopSelling /></Link>
       </div>
     </div>
   );

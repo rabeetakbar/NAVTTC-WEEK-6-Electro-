@@ -6,27 +6,28 @@ import cam from '../assets/cam.png';
 const TopSelling = () => {
 
   const products = [
+    
     {
       id: 1,
       imageUrl: laptop,   
-      category: 'CATEGORY',
-      productName: 'PRODUCT NAME GOES HERE',
+      category: 'Laptop',
+      productName: 'Dell latitude 5590',
       price: 980.00,
       oldPrice: 990.00,
     },
     {
       id: 2,
       imageUrl: mobile,   
-      category: 'CATEGORY',
-      productName: 'PRODUCT NAME GOES HERE',
+      category: 'SmartPhone',
+      productName: 'Samsung S7 Edge',
       price: 980.00,
       oldPrice: 990.00,
     },
     {
       id: 3,
       imageUrl: cam,
-      category: 'CATEGORY',
-      productName: 'PRODUCT NAME GOES HERE',
+      category: 'Camera',
+      productName: 'Sony Alpha',
       price: 980.00,
       oldPrice: 990.00,
     },

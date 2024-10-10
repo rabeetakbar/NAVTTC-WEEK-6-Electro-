@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faRetweet, faEye } from '@fortawesome/free-solid-svg-icons';
-import Images from './images'; 
+import Images from './images'; // Assuming this imports your local images
 
 const ProductCard = ({ imageKey, category, productName, price, oldPrice, rating, addToCart }) => {
   const [isHovered, setIsHovered] = useState(false);
 
-  
-  const imageSrc = Images[imageKey] || '/path/to/default-image.png';  
+  // Determine the image source; prefer the image from Images, fall back to backend image, then default image
+  const imageSrc = Images[imageKey] || imageKey || '/path/to/default-image.png';  
 
   return (
     <div
@@ -17,7 +17,7 @@ const ProductCard = ({ imageKey, category, productName, price, oldPrice, rating,
     >
       <div className="relative">
         <img
-          src={imageSrc}  
+          src={imageSrc}  // Use the determined image source
           alt={productName}
           className="w-full h-48 object-contain mb-4"
         />
@@ -32,7 +32,6 @@ const ProductCard = ({ imageKey, category, productName, price, oldPrice, rating,
           )}
         </div>
         <div className="flex justify-center mt-2">
-
           {[...Array(5)].map((_, i) => (
             <span key={i} className={i < rating ? 'text-red-500' : 'text-gray-300'}>★</span>
           ))}
@@ -59,3 +58,4 @@ const ProductCard = ({ imageKey, category, productName, price, oldPrice, rating,
 };
 
 export default ProductCard;
+

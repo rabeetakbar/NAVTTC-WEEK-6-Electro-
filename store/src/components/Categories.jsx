@@ -15,25 +15,25 @@ const Categories = () => {
           </div>
           
           <div className="p-6 bg-gray-700 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <Link to="/laptops" className="text-xl font-semibold hover:text-red-500 block text-center">
+            <Link to="/products/laptops" className="text-xl font-semibold hover:text-red-500 block text-center">
               Laptops
             </Link>
           </div>
           
           <div className="p-6 bg-gray-700 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <Link to="/smartphones" className="text-xl font-semibold hover:text-red-500 block text-center">
+            <Link to="/products/smartphones" className="text-xl font-semibold hover:text-red-500 block text-center">
               SmartPhones
             </Link>
           </div>
           
           <div className="p-6 bg-gray-700 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <Link to="/cameras" className="text-xl font-semibold hover:text-red-500 block text-center">
+            <Link to="/products/cameras" className="text-xl font-semibold hover:text-red-500 block text-center">
               Cameras
             </Link>
           </div>
           
           <div className="p-6 bg-gray-700 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <Link to="/accessories" className="text-xl font-semibold hover:text-red-500 block text-center">
+            <Link to="/products/accessories" className="text-xl font-semibold hover:text-red-500 block text-center">
               Accessories
             </Link>
           </div>

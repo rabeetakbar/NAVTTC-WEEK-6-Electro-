@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faShoppingCart, faBars, faTimes, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faShoppingCart, faBars, faTimes, faUser,faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
 import '../App.css';
 
 const Navbar = ({ cartItems }) => {
@@ -62,6 +63,13 @@ const Navbar = ({ cartItems }) => {
               <span className="text-xs">Your Account</span>
             </button>
           </Link>
+   
+          <Link to="/contactus">
+  <button className="flex flex-col items-center">
+    <FontAwesomeIcon icon={faEnvelope} />
+    <span className="text-xs">Contact Us</span>
+  </button>
+</Link>
         </div>
       </div>
 
@@ -92,24 +100,24 @@ const Navbar = ({ cartItems }) => {
             </Link>
           </li>
           <li>
-            <Link to="/laptops" className="hover-underline hover:text-red-600">
+            <Link to="products/laptops" className="hover-underline hover:text-red-600">
               Laptops
             </Link>
           </li>
           <li>
-            <Link to="/smartphones" className="hover-underline hover:text-red-600">
+            <Link to="products/smartphones" className="hover-underline hover:text-red-600">
               SmartPhones
             </Link>
           </li>
           <li>
-            <Link to="/cameras" className="hover-underline hover:text-red-600">
+            <Link to="products/cameras" className="hover-underline hover:text-red-600">
               Cameras
             </Link>
           </li>
           <li>
-            <Link to="/accessories" className="hover-underline hover:text-red-600">
+            <Link to="products/accessories" className="hover-underline hover:text-red-600">
               Accessories
-            </Link>
+            </Link> 
           </li>
         </ul>
       </div>
